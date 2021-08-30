@@ -1,0 +1,13 @@
+version: "3.6"
+
+services:
+  simplytranslate:
+    build: .
+    container_name: "simplytranslate"
+    networks:
+      - egress
+    ports:
+      - "5000:5000"
+networks:
+  egress:
+    external: true

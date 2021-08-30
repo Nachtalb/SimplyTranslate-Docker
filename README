@@ -4,4 +4,5 @@ This repository contains several Dockerfiles for setting up a SimplyTranslate se
 wether that be on the web or on gemini.
 
 
+for ease of use we've included a docker-compose configuration.
 
