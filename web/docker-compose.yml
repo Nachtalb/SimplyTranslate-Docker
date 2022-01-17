@@ -3,11 +3,8 @@ version: "3.6"
 services:
   simplytranslate:
     build: .
-    container_name: "simplytranslate"
-    networks:
-      - egress
+    container_name: simplytranslate
     ports:
-      - "5000:5000"
-networks:
-  egress:
-    external: true
+      - "127.0.0.1:5000:5000"
+    volumes:
+      - "./config.conf:/etc/simplytranslate/web.conf"
