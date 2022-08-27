@@ -11,6 +11,7 @@ services:
       - "$PWD/translate/web/config.conf:/etc/simplytranslate/web.conf"
     networks:
       - nginx
+    restart: unless-stopped
 
 networks:
   nginx:
