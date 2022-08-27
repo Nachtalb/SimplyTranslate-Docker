@@ -2,9 +2,16 @@ version: "3.6"
 
 services:
   simplytranslate:
-    build: .
+    build: translate/web/uvicorn/
+    image: local/simplytranslate
     container_name: simplytranslate
-    ports:
-      - "127.0.0.1:5000:5000"
+    # ports:
+    #   - "8803:5000"
     volumes:
-      - "./config.conf:/etc/simplytranslate/web.conf"
+      - "$PWD/translate/web/config.conf:/etc/simplytranslate/web.conf"
+    networks:
+      - nginx
+
+networks:
+  nginx:
+    external: true
